@@ -1,0 +1,16 @@
+<!-- nursing_colleges.html -->
+<h1>Browse Colleges</h1>
+{% if colleges %}
+    <ul>
+    {% for college in colleges %}
+        <li>
+            <strong>{{ college[0] }}</strong><br> <!-- College_Name (index 0) -->
+            Location: {{ college[1] }}<br>         <!-- Location (index 1) -->
+            Fees: {{ college[2] }}<br>             <!-- Fees (index 2) -->
+            <a href="{{ college[3] }}" target="_blank">College Website</a> <!-- College_URL (index 3) -->
+        </li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No colleges found in the database.</p>
+{% endif %}
